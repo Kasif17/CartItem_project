@@ -26,3 +26,9 @@ body {
 .action-icons:hover{
   cursor: pointer;
 }
+action-icons{
+  height: 10%;
+  width: 10%;
+  margin-right: 10px;
+
+}
