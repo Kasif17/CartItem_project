@@ -14,7 +14,36 @@ class CartItem extends React.Component{
         //this.increseQuantity = this.increseQuantity.bind(this);
     }
     increseQuantity = ()=>{
-        console.log("this",this.state)
+       // console.log("this",this.state)
+
+        // set form 1
+        // this.setState({
+        //     Qty: this.state.Qty+1  
+        // })
+        // second method -- if previous state require then use this
+        this.setState((prevState)=>
+        {
+            return{
+                Qty:prevState.Qty+1
+            }
+        })
+    }
+    decreaseQuantity=()=>{
+        //console.log("this",this.state)
+
+       // set form 2
+
+        // this.setState({
+        //     Qty : this.state.Qty-1
+        // })
+
+        //using second form 2
+        this.setState((prevState)=>
+        {
+            return{
+                Qty:prevState.Qty-1
+            }
+        })
     }
     render(){
         const {price,title,Qty}=this.state;
@@ -34,7 +63,11 @@ class CartItem extends React.Component{
                      src="https://img.icons8.com/?size=512&id=1501&format=png"
                      onClick={this.increseQuantity}
                      />
-                    <img style={im.icons}alt="decrease" className="action-icons" src="https://img.icons8.com/?size=512&id=1504&format=png"/>
+                    <img style={im.icons}alt="decrease"
+                     className="action-icons" 
+                     src="https://img.icons8.com/?size=512&id=1504&format=png"
+                     onClick={this.decreaseQuantity}
+                     />
                     <img style={im.icons}alt="delete" className="action-icons" src="https://img.icons8.com/?size=512&id=57061&format=png"/>
                     </div>
                 </div>
